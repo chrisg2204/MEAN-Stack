@@ -1,0 +1,27 @@
+{
+  "name": "MEAN-Stack",
+  "version": "1.0.0",
+  "description": "Web service and Design developed with MongoDB + Express.js + Angular + Node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisg2204/MEAN-Stack.git"
+  },
+  "author": "chrisg2204",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrisg2204/MEAN-Stack/issues"
+  },
+  "homepage": "https://github.com/chrisg2204/MEAN-Stack#readme",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "crypto": "0.0.3",
+    "ejs": "^2.5.6",
+    "express": "^4.14.1",
+    "mongoose": "^4.8.2"
+  }
+}
