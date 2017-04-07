@@ -1,9 +1,10 @@
-'use strict';
+"use strict";
+
 module.exports = (express) => {
-	let router = express.Router(),
-		models = require('../models/index'),
+    let router = express.Router(),
 
-		userController = require('./userController')(router, models);
+        userController = require('./userController')(router);
 
-	return router;
+    return router;
+    
 };

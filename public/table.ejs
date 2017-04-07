@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap/core/css/bootstrap.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+  <title>MEAN</title>
+</head>
+<body ng-app="myApp">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div ng-controller="smartTableCtrl">
+                <button type="button" ng-click="addRandomItem(row)" class="btn btn-sm btn-success">
+                    <i class="glyphicon glyphicon-plus">
+                    </i> Add random item
+                </button>
+                <table st-table="displayedCollection" st-safe-src="rowCollection" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th st-sort="userEmail">Email</th>
+                        <th st-sort="userFirstName">first name</th>
+                        <th st-sort="userLastName">last name</th>
+                    </tr>
+                    <tr>
+                        <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text"/></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="row in displayedCollection">
+                        <td>{{row.userEmail}}</td>
+                        <td>{{row.userFirstName}}</td>
+                        <td>{{row.userLastName}}</td>
+                        <td>
+                        <button type="button" ng-click="removeItem(row)" class="btn btn-sm btn-danger">
+                            <i class="glyphicon glyphicon-remove-circle">
+                            </i>
+                        </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div ng-controller="modalCtlr">
+                <input type="button" value="Show modal" ng-click="showModal()"/>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+  <script type="text/javascript" src="/assets/angular/core/angular.min.js"></script>
+  <script type="text/javascript" src="/assets/angular/ui/ui-bootstrap-tpls-2.5.0.min.js"></script>
+  <script type="text/javascript" src="/assets/angular/core/angular-animate.min.js"></script>
+  <script type="text/javascript" src="/assets/angular/core/angular-touch.min.js"></script>
+  <script type="text/javascript" src="/assets/angular/table/smart-table.min.js"></script>
+  <script type="text/javascript" src="/assets/angular/match/angular-validation-match.min.js"></script>
+
+  <script type="text/javascript" src='/assets/app/table.js'></script>
+  <script type="text/javascript" SRC="/assets/app/controllers/smartTableCtrl.js"></script>
+  <script type="text/javascript" src="/assets/app/controllers/modalCtlr.js"></script>
+  <script type="text/javascript" src="/assets/app/controllers/modalDialogCtlr.js"></script>
+  <script type="text/ng-template" src="/assets/app/templates/modal.html"></script>
+</html>

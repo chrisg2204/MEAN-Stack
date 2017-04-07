@@ -1,0 +1,53 @@
+<div class="modal-header">
+	<h3 class="modal-title text-center">Modal Users</h3>
+</div>
+<div class="modal-body">
+	<form name="userForm" class="form-horizontal" ng-submit='submitUserForm()'>
+		<div class="form-group" ng-class="{ 'has-error': userForm.userEmail.$invalid && !userForm.userEmail.$pristine }">
+			<label class="col-md-2 control-label">Email</label>
+			<div class="col-md-8">
+				<input class="form-control" type="email" name="userEmail" class="form-control" ng-model="textEmail" placeholder="email@example.com" required />
+				<span ng-show="userForm.userEmail.$invalid && !userForm.userEmail.$pristine" class="help-block">Email not is valid.</span>
+			</div>
+		</div>
+
+		<div class="form-group" ng-class="{ 'has-error': userForm.userPasswd.$invalid && !userForm.userPasswd.$pristine }">
+			<label class="col-md-2 control-label">Passwd</label>
+			<div class="col-md-8">
+				<input type="password" name="userPasswd" class="form-control" ng-model="textPasswd" required />
+				<span ng-show="userForm.userPasswd.$invalid && !userForm.userPasswd.$pristine" class="help-block">Password is required.</span>
+			</div>
+		</div>
+
+		<div class="form-group" ng-class="{ 'has-error': userForm.userPasswdConfirm.$error.match }">
+			<label class="col-md-2 control-label">Confirm</label>
+			<div class="col-md-8">
+				<input type="password" name="userPasswdConfirm" class="form-control" ng-model="textPasswdConfirm" data-match="userForm.userPasswd" required />
+				<span ng-show="userForm.userPasswdConfirm.$error.match" class="help-block">Password is not equal.</span>
+			</div>
+		</div>
+
+		<div class="form-group" ng-class="{ 'has-error': userForm.userFirstName.$invalid && !userForm.userFirstName.$pristine }">
+			<label class="col-md-2 control-label">First Name</label>
+			<div class="col-md-8">
+				<input class="form-control" type="text" name="userFirstName" class="form-control" ng-model="textFirstName" placeholder="Your first name" required />
+				<span ng-show="userForm.userFirstName.$invalid && !userForm.userFirstName.$pristine" class="help-block">First name is required.</span>
+			</div>
+		</div>
+
+		<div class="form-group" ng-class="{ 'has-error': userForm.userLastName.$invalid && !userForm.userLastName.$pristine }">
+			<label class="col-md-2 control-label">Last Name</label>
+			<div class="col-md-8">
+				<input type="text" name="userLastName" class="form-control" ng-model="textLastName" placeholder="Your last name" required />
+				<span ng-show="userForm.userLastName.$invalid && !userForm.userLastName.$pristine" class="help-block">Last name is required.</span>
+			</div>
+		</div>
+
+		<div class="text-center">
+			<button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Submit</button>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

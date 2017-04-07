@@ -1,25 +1,30 @@
-'use strict';
+"use strict";
 
 module.exports = (db) => {
-	let mongoose = db.mongoose,
-		usersSchema = new db.schema({
-			userEmail: {
-				type: String, required: [true, 'Email is required']
-			},
-			userPasswd: {
-				type: String, required: [true, 'Password is required']
-			},
-			userFirstName: {
-				type: String, default: ''
-			},
-			userLastName: {
-				type: String, default: ''
-			},
-			userAddress: {
-				type: String, default: ''
-			},
-		});
+    let mongoose = db.mongoose,
+        usersSchema = new db.schema({
+            userLogin: {
+                type: String,
+                required: [true, 'Login is required']
+            },
+            userEmail: {
+                type: String,
+                required: [true, 'Email is required']
+            },
+            userPasswd: {
+                type: String,
+                required: [true, 'Password is required']
+            },
+            userFirstName: {
+                type: String,
+                default: ''
+            },
+            userLastName: {
+                type: String,
+                default: ''
+            }
+        });
 
-		return  mongoose.model('users', usersSchema);
+    return mongoose.model('users', usersSchema);
 
 };
